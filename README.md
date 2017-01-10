@@ -4,7 +4,7 @@ Clojure library to retrieve random images from wikimedia commons.
 
 ## Usage
 
-Add `[t2/common-imgs "0.1.0-SNAPSHOT"]` to your dependencies.
+Add `[thought2/common-imgs "0.1.0-SNAPSHOT"]` to your dependencies.
 
 ```clj
 (require '[t2.common-imgs :refer [random-spec spec->url])
