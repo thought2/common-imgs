@@ -23,7 +23,21 @@ This returns an image spec:
 When this spec is passed to `spec->url` including a width parameter, one will get back an url which can be used to download the image in this size:
 
 ```clj
-(spec->url spec)
+(spec->url spec 100)
 ;; "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Cuban_Embassy_in_Wellington.jpg/500px-Cuban_Embassy_in_Wellington.jpg"
 ```
+
+`(spec->url spec 100)`
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Cuban_Embassy_in_Wellington.jpg/100px-Cuban_Embassy_in_Wellington.jpg)
+
+
+`(spec->url spec 200)`
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Cuban_Embassy_in_Wellington.jpg/200px-Cuban_Embassy_in_Wellington.jpg)
+
+
+`(spec->url spec 300)`
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Cuban_Embassy_in_Wellington.jpg/300px-Cuban_Embassy_in_Wellington.jpg)
 
