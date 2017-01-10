@@ -1,12 +1,12 @@
-(def project 'thought2/common-imgs)
+(def project 't2/common-imgs)
 (def version "0.1.0-SNAPSHOT")
 
 (set-env! :resource-paths #{"resources" "src"}
           :source-paths   #{"test"}
           :dependencies   '[[http-kit            "2.1.18"]
-                            [enlive              "1.1.6"]
-                            [org.clojure/clojure "RELEASE"]
-                            [adzerk/boot-test    "RELEASE" :scope "test"]])
+                            [enlive              "1.1.6"]                            
+                            [adzerk/boot-test    "RELEASE" :scope "test"]
+                            ])
 
 (task-options!
  pom {:project     project
@@ -23,3 +23,4 @@
   (comp (pom) (jar) (install)))
 
 (require '[adzerk.boot-test :refer [test]])
+
