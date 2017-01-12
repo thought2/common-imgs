@@ -1,43 +1,42 @@
 # common-imgs
 
-Clojure library to retrieve random images from wikimedia commons.
+Clojure library to retrieve random images from the Wikimedia Commons API.
 
 ## Usage
 
-Add `[thought2/common-imgs "0.1.0-SNAPSHOT"]` to your dependencies.
+Add `[thought2/common-imgs "RELEASE"]` to your dependencies.
 
 ```clj
-(require '[t2.common-imgs :refer [random-spec spec->url])
+(require '[thought2.common-imgs :refer [random-img-specs img-spec->url])
 
-(def spec (random-spec))
+(def img-specs (random-img-specs 50))
 ```
 
-This returns an image spec:
+This returns a list of around 50 image specs, which look like this:
 
 ```clj
 {:size [999 749],
- :thumb-url "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Cuban_Embassy_in_Wellington.jpg/120px-Cuban_Embassy_in_Wellington.jpg",
  :url-template ["https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Cuban_Embassy_in_Wellington.jpg/" "px-Cuban_Embassy_in_Wellington.jpg"]}
 ```
 
-When this spec is passed to `spec->url` including a width parameter, one will get back an url which can be used to download the image in this size:
+When this spec is passed to `img-spec->url` including a width parameter, one will get back an url which can be used to download the image in the right size:
 
 ```clj
-(spec->url spec 100)
+(img-spec->url img-spec 100)
 ;; "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Cuban_Embassy_in_Wellington.jpg/500px-Cuban_Embassy_in_Wellington.jpg"
 ```
 
-`(spec->url spec 100)`
+`(img-spec->url img-spec 100)`
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Cuban_Embassy_in_Wellington.jpg/100px-Cuban_Embassy_in_Wellington.jpg)
 
 
-`(spec->url spec 200)`
+`(img-spec->url img-spec 200)`
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Cuban_Embassy_in_Wellington.jpg/200px-Cuban_Embassy_in_Wellington.jpg)
 
 
-`(spec->url spec 300)`
+`(img-spec->url img-spec 300)`
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Cuban_Embassy_in_Wellington.jpg/300px-Cuban_Embassy_in_Wellington.jpg)
 
