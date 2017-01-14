@@ -22,7 +22,7 @@ This returns a list of around 50 image specs, which look like this:
 
 {:size [999 749],
  :url-template ["https://upload.wikimedia.org/wikipedia/commons/thumb/5/55
- /Cuban_Embassy_in_Wellington.jpg/"
+/Cuban_Embassy_in_Wellington.jpg/"
                 "px-Cuban_Embassy_in_Wellington.jpg"]}
 ```
 
