@@ -30,7 +30,8 @@ When this spec is passed to `img-spec->url` including a width parameter, one wil
 
 ```clj
 (img-spec->url img-spec 100)
-;; "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Cuban_Embas
+;; => 
+"https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Cuban_Embas
 sy_in_Wellington.jpg/500px-Cuban_Embassy_in_Wellington.jpg"
 ```
 
