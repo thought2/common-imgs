@@ -1,6 +1,6 @@
 ![](https://clojars.org/thought2/common-imgs/latest-version.svg)
 
-![][logo]
+![](https://raw.githubusercontent.com/thought2/common-imgs/master/logo/common-imgs-logo.png)
 # common-imgs
 
 Clojure library to retrieve random images from the Wikimedia Commons API.
