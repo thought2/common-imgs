@@ -4,10 +4,11 @@
 
 (set-env! :resource-paths #{"resources" "src"}
           :source-paths   #{"test"}
-          :dependencies   '[[boot-codox            "0.10.2" :scope "test"]
-                            [http-kit              "2.1.18"]
-                            [org.clojure/data.json "0.2.6"]
-                            [adzerk/boot-test      "RELEASE" :scope "test"]])
+          :dependencies   '[[boot-codox             "0.10.2" :scope "test"]
+                            [http-kit               "2.1.18"]
+                            [net.mikera/core.matrix "0.54.0"]
+                            [org.clojure/data.json  "0.2.6"]
+                            [adzerk/boot-test       "RELEASE" :scope "test"]])
 
 (require '[adzerk.boot-test :refer [test]]
          '[codox.boot :refer [codox]])

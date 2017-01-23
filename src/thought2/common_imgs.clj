@@ -21,16 +21,16 @@
      width))
 
 (def
-  ^{:doc   "Receive 1-50 img-specs by one HTTP request"
-    :added "1.0"
+  ^{:doc   "Receive 1-50 img-specs by one HTTP request."
+    :added "0.1.0"
     :arglists '([n])}
   random-img-specs
   (wrap-conform core/random-img-specs*
                 (s/cat :n ::result-count)))
 
 (def
-  ^{:doc   "Transform img-spec into a valid URL when provided a width"
-    :added "1.0"
+  ^{:doc   "Transform img-spec into a valid URL when provided a width."
+    :added "0.1.0"
     :arglists '([img-spec width])}
   img-spec->url 
   (wrap-conform core/img-spec->url*
@@ -39,10 +39,10 @@
                               :width ::pos-nr))))
 
 (def
-  ^{:doc ".."
-    :added "2.0"
-    :arglists '([n min-width])}
-  random-img-specs-infinite
-  (wrap-conform core/random-img-specs-infinite*
-                (s/cat :n number?
-                       :min-width number?)))
+  ^{:doc "Returns an infinite sequence of img-specs of a minimum size."
+    :added "0.2.0"
+    :arglists '([min-size])}
+  img-specs
+  (wrap-conform core/img-specs
+                (s/cat :min-size ::size)))
+

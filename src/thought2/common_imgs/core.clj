@@ -1,8 +1,11 @@
 (ns thought2.common-imgs.core
   (:require
    [clojure.spec :as spec]
+   [thought2.common-imgs.utils :refer [apply-concat lt-both?]]
    [thought2.common-imgs.ring :refer [wrap-json-resp http-handler]]
    [clojure.string :as s]))
+
+(def fetch-limit 50)
 
 (defn req [n]
   {:method :get
@@ -43,6 +46,11 @@
 (defn fetch [n]
   (-> n req http-req))
 
+(defn infinite-img-specs []
+  (-> #(-> (fetch fetch-limit) parse)
+      repeatedly
+      apply-concat))
+
 ;; api
 
 (defn random-img-specs* [{:keys [n]}]
@@ -54,6 +62,7 @@
   {:added "0.1.0"}
   (resolve-url-template (img-spec :url-template) width))
 
-(defn random-img-specs-infinite* [{:keys [n]}]
+(defn img-specs [{:keys [min-size]}]
   {:added "0.2.0"}
-  "..")
+  (->> (infinite-img-specs)
+       (filter #(lt-both? min-size (:size %)))))
