@@ -4,10 +4,12 @@
             [org.httpkit.client :as http]))
 
 (defn get-img [img-spec]
-  (let [width 1]
-    (-> img-spec
-        (api/img-spec->url width)
-        http/get deref)))
+  (let [width 1
+        url (api/img-spec->url img-spec width)
+        _ (println "fetching" url)
+        res (-> url http/get deref)
+        _ (println "done.")]
+    res))
 
 (defn ok? [resp]
   (= 200 (resp :status)))
