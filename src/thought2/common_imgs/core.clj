@@ -46,9 +46,14 @@
 ;; api
 
 (defn random-img-specs* [{:keys [n]}]
+  {:added "0.1.0"}
   (-> (fetch n)
       parse))
 
 (defn img-spec->url* [{:keys [img-spec width]}]
+  {:added "0.1.0"}
   (resolve-url-template (img-spec :url-template) width))
 
+(defn random-img-specs-infinite* [{:keys [n]}]
+  {:added "0.2.0"}
+  "..")
