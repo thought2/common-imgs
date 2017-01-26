@@ -2,7 +2,7 @@
 (def version "0.2.0-SNAPSHOT")
 (def description "Clojure library to retrieve random images from the Wikimedia Commons API.")
 
-(set-env! :resource-paths #{"resources" "src"}
+(set-env! :resource-paths #{"src"}
           :source-paths   #{"test"}
           :dependencies   '[[boot-codox             "0.10.2" :scope "test"]
                             [http-kit               "2.1.18"]
