@@ -7,7 +7,6 @@
           :dependencies   '[[boot-codox             "0.10.2" :scope "test"]
                             [http-kit               "2.1.18"]
                             [net.mikera/core.matrix "0.54.0"]
-                            #_[clojure-future-spec "1.9.0-alpha14"]
                             [org.clojure/clojure    "1.9.0-alpha10"] 
                             [org.clojure/data.json  "0.2.6"]
                             [adzerk/boot-test       "RELEASE" :scope "test"]])
@@ -26,12 +25,12 @@
         :version version
         :description description
         :source-paths #{"src"}
-        :output-path version
         :filter-namespaces ['thought2.common-imgs]})
 
 (deftask docs []
   (comp (codox)
-        (sift :include #{(re-pattern version)})
+        (sift :include #{#"doc"}
+              :move {#"^doc/" ""})        
         (target
          :dir #{"docs"})))
 
