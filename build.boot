@@ -27,12 +27,7 @@
         :source-paths #{"src"}
         :filter-namespaces ['thought2.common-imgs]})
 
-(deftask docs []
-  (comp (codox)
-        (sift :include #{#"doc"}
-              :move {#"^doc/" ""})        
-        (target
-         :dir #{"docs"})))
+
 
 (deftask build-install
   "Build and install the project locally."
