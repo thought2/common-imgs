@@ -31,7 +31,9 @@
 
 (deftask docs []
   (comp (codox)
-        (target :dir #{"docs"})))
+        (sift :include #{(re-pattern version)})
+        (target
+         :dir #{"docs"})))
 
 (deftask build-install
   "Build and install the project locally."
