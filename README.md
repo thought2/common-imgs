@@ -5,7 +5,7 @@
 
 Clojure library to retrieve random images from the Wikimedia Commons API.
 
-[API Docs](http://thought2.github.io/common-imgs)
+[API Docs](http://thought2.github.io/common-imgs/api/RELEASE)
 
 ## Usage
 
