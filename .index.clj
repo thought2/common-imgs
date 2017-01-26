@@ -3,13 +3,13 @@
 (use 'hiccup.core 'hiccup.page)
 (require '[clojure.java.io :as io])
 
-(def xs (->> (io/file "../api")
+(def xs (->> (io/file "api")
              .listFiles
              (map str)
              (remove (partial re-find #"RELEASE$"))))
 
 (defn -main [& args]
-  (spit "../index.html"
+  (spit "index.html"
         (html5
          [:body
           [:h1 "commmon-imgs API"]
