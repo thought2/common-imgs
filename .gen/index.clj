@@ -3,7 +3,7 @@
 (use 'hiccup.core 'hiccup.page)
 (require '[clojure.java.io :as io])
 
-(def xs (->> (io/file "api")
+(def xs (->> (io/file "../api")
              .listFiles
              (map str)
              (remove (partial re-find #"RELEASE$"))))
