@@ -26,7 +26,12 @@
         :version version
         :description description
         :source-paths #{"src"}
+        :output-path version
         :filter-namespaces ['thought2.common-imgs]})
+
+(deftask docs []
+  (comp (codox)
+        (target :dir #{"docs"})))
 
 (deftask build-install
   "Build and install the project locally."
