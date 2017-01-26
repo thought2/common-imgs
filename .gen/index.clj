@@ -9,8 +9,9 @@
              (remove (partial re-find #"RELEASE$"))))
 
 (defn -main [& args]
-  (spit "index.html"
+  (spit "../index.html"
         (html5
          [:body
+          [:h1 "commmon-imgs API"]
           (for [f xs]
             [:div [:a {:href f } f]])])))
