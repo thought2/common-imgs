@@ -1,5 +1,5 @@
 (def project 'thought2/common-imgs)
-(def version "0.2.0-SNAPSHOT")
+(def version "0.2.0")
 (def description "Clojure library to retrieve random images from the Wikimedia Commons API.")
 
 (set-env! :resource-paths #{"src"}
